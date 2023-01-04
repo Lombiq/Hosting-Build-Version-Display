@@ -22,4 +22,8 @@
     <Folder Include="Views\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\Readme.md" Link="Readme.md" />
+  </ItemGroup>
+
 </Project>

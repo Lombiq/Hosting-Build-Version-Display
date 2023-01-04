@@ -1,8 +1,8 @@
-# Lombiq <add project name here>
+# Lombiq Hosting - Tenants for Orchard Core
 
 ## About
 
-Add a general overview of the project here. Keep or remove the OSOCE note below as necessary.
+[Orchard Core](https://www.orchardcore.net/) module to display the build version (i.e. .NET assembly version or other) on the admin. This is useful to see at a glance which version of the app you have to deployed currently to the given environment.
 
 Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
 

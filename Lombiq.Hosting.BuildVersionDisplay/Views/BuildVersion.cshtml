@@ -1,0 +1,14 @@
+@{
+    var orchardVersion = typeof(OrchardCore.IOrchardHelper).Assembly.GetName().Version.ToString();
+    var buildVersion = "#build.version#";
+
+    // The placeholder wasn't replaced, using the default.
+    if (buildVersion == "#build.version#")
+    {
+        buildVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+    }
+}
+
+<div id="lombiq-hosting-buildversiondisplay-buildversion">
+    @T["Orchard Core version: {0} Build version: {1}", orchardVersion, buildVersion]
+</div>

@@ -1,10 +1,11 @@
 using OrchardCore.Modules.Manifest;
 
 [assembly: Module(
-    Name = "Lombiq.Hosting.BuildVersionDisplay",
-    Author = "The Orchard Core Team",
-    Website = "https://orchardcore.net",
+    Name = "Lombiq Hosting - Build Version Display",
+    Author = "Lombiq Technologies",
+    Website = "https://github.com/Lombiq/Hosting-Build-Version-Display",
     Version = "0.0.1",
-    Description = "Lombiq.Hosting.BuildVersionDisplay",
-    Category = "Content Management"
+    Description = "Displays the build version (i.e. .NET assembly version or other) on the admin.",
+    Category = "Hosting",
+    DefaultTenantOnly = true
 )]

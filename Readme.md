@@ -1,8 +1,10 @@
-# Lombiq Hosting - Tenants for Orchard Core
+# Lombiq Hosting - Build Version Display for Orchard Core
+
+[![Lombiq.Hosting.BuildVersionDisplay NuGet](https://img.shields.io/nuget/v/Lombiq.Hosting.BuildVersionDisplay?label=Lombiq.Hosting.BuildVersionDisplay)](https://www.nuget.org/packages/Lombiq.Hosting.BuildVersionDisplay/)
 
 ## About
 
-[Orchard Core](https://www.orchardcore.net/) module to display the build version (i.e. .NET assembly version or other) on the admin. This is useful to see at a glance which version of the app you have to deployed currently to the given environment.
+[Orchard Core](https://www.orchardcore.net/) module to display the build version (i.e. .NET assembly version or other) on the admin of the `Default` tenant. This is useful to see at a glance which version of the app you have to deployed currently to the given environment.
 
 Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
 

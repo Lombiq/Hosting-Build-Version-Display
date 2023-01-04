@@ -9,7 +9,7 @@
     }
 }
 
-<div id="lombiq-hosting-buildversiondisplay-buildversion">
+<div id="lombiq-hosting-build-version-display-build-version">
     @* Html.Raw() is necessary so links can be included in the replaced build version. *@
-    @T["Orchard Core version: {0} Build version: {1}", orchardVersion, Html.Raw(buildVersion)]
+    @T["Orchard Core version: {0}<br>App build version: {1}", orchardVersion, Html.Raw(buildVersion)]
 </div>

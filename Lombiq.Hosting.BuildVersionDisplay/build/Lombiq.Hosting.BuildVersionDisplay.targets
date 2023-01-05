@@ -3,12 +3,14 @@
 
   <!-- Setting a test value just when working in the OSOCE solution. -->
   <PropertyGroup Condition="'$(BuildUrl)' == '' AND '$(SolutionName)' == 'Lombiq.OSOCE'" >
-    <BuildUrl>https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/123</BuildUrl>
+    <BuildVersionDisplay_BuildUrl>
+      https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/123
+    </BuildVersionDisplay_BuildUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <AssemblyAttribute Include="Lombiq.Hosting.BuildVersionDisplay.BuildUrlAttribute">
-      <_Parameter1>$(BuildUrl)</_Parameter1>
+      <_Parameter1>$(BuildVersionDisplay_BuildUrl)</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
 

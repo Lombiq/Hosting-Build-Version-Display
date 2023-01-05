@@ -10,12 +10,12 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ## Documentation
 
-Just enable the "Lombiq Hosting - Build Version Display" feature on the `Default` tenant to display the Orchard Core version and the app's .NET version on the dashboard.
+Just enable the "Lombiq Hosting - Build Version Display" feature on the `Default` tenant to display the Orchard Core version and the app's .NET version on the dashboard (i.e. _/admin_).
 
-Optionally, a link to the CI build's page can be display as well. During `dotnet build`, provide this in the `BuildUrl` property. E.g.:
+Optionally, a link to the CI build's page can be display as well. During `dotnet build`, provide this in the `BuildVersionDisplay_BuildUrl` property. E.g.:
 
 ```pwsh
-dotnet build .\MyApp.sln -p:BuildUrl=https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/123
+dotnet build .\MyApp.sln -p:BuildVersionDisplay_BuildUrl=https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/123
 ```
 
 The [Deploy to Azure App Service workflow](https://github.com/Lombiq/GitHub-Actions/blob/dev/Docs/Workflows.md#deploy-to-azure-app-service-workflow) also takes care of this.

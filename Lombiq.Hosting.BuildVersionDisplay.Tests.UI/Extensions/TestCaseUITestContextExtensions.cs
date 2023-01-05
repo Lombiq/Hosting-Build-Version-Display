@@ -12,7 +12,7 @@ public static class TestCaseUITestContextExtensions
     /// <summary>
     /// Tests the Lombiq Hosting - Build Version Display for Orchard Core feature.
     /// </summary>
-    public static async Task TestBuildVersionDisplayAsync(this UITestContext context)
+    public static async Task TestBuildVersionDisplayAsync(this UITestContext context, bool checkBuildLink = true)
     {
         await context.SignInDirectlyAndGoToDashboardAsync();
 
@@ -22,6 +22,9 @@ public static class TestCaseUITestContextExtensions
         var orchardVersion = typeof(OrchardCore.IOrchardHelper).Assembly.GetName().Version.ToString();
         listItems.ShouldContain(element => element.Text == "Orchard Core version: " + orchardVersion);
         listItems.ShouldContain(element => element.Text.Contains("App build version"));
-        listItems.ShouldContain(element => element.Text.Contains("Build link"));
+        if (checkBuildLink)
+        {
+            listItems.ShouldContain(element => element.Text.Contains("Build link"));
+        }
     }
 }

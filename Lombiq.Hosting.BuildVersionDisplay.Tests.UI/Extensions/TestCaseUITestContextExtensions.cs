@@ -15,7 +15,7 @@ public static class TestCaseUITestContextExtensions
     /// <remarks>
     /// <para>
     /// <paramref name="checkBuildLink"/> defaults to false since the build link won't be displayed when the tests are
-    /// run from a published UI test project (it displays properly when run form source). This is because the UI test
+    /// run from a published UI test project (it displays properly when run from source). This is because the UI test
     /// project doesn't (shouldn't) reference the module project/package directly and thus won't use its targets file
     /// either, breaking the BuildVersionDisplay_BuildUrl property. This is not an error, the link is still displayed
     /// when the web app is run directly.

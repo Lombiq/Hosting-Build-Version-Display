@@ -26,7 +26,7 @@ internal class BuildVersionDisplayInjectingFilter : IAsyncResultFilter
     {
         if (context.IsNotFullViewRendering() ||
             !context.IsAdmin() ||
-            context.HttpContext.Request.Path.ToString().TrimEnd('/') != "/" + _adminOptions.Value.AdminUrlPrefix)
+            !context.HttpContext.Request.Path.ToString().TrimEnd('/').EqualsOrdinalIgnoreCase("/" + _adminOptions.Value.AdminUrlPrefix))
         {
             await next();
 

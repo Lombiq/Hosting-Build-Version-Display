@@ -23,7 +23,9 @@
   <ItemGroup>
     <None Include="License.md" Pack="true" PackagePath="" />
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
-    <None Include="*.props" Pack="true" PackagePath="" />
+    <!-- If this is not explicitly specified then OrchardCore.Module.Targets will take over the build folder and it
+    won't be included. -->
+    <None Include="build\Lombiq.Hosting.BuildVersionDisplay.targets" Pack="true" PackagePath="build\Lombiq.Hosting.BuildVersionDisplay.targets" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,8 +56,8 @@
     <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="5.0.0" />
   </ItemGroup>
 
-  <!-- The props file will be automatically imported when using the project from NuGet but needs an explicit import
+  <!-- The targets file will be automatically imported when using the project from NuGet but needs an explicit import
   when used from source. -->
-  <Import Project="build/Lombiq.Hosting.BuildVersionDisplay.props" Condition="'$(NuGetBuild)' != 'true'" />
+  <Import Project="build/Lombiq.Hosting.BuildVersionDisplay.targets" Condition="'$(NuGetBuild)' != 'true'" />
 
 </Project>

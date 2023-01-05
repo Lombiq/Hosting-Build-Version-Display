@@ -53,4 +53,8 @@
     <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="5.0.0" />
   </ItemGroup>
 
+  <!-- The props file will be automatically imported when using the project from NuGet but needs an explicit import
+  when used from source. -->
+  <Import Project="build/Lombiq.Hosting.BuildVersionDisplay.props" />
+
 </Project>

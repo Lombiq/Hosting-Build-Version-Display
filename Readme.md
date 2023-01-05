@@ -4,13 +4,21 @@
 
 ## About
 
-[Orchard Core](https://www.orchardcore.net/) module to display the build version (i.e. .NET assembly version or other) on the admin of the `Default` tenant. This is useful to see at a glance which version of the app you have to deployed currently to the given environment.
+[Orchard Core](https://www.orchardcore.net/) module to display the build version (i.e. .NET assembly version or other) on the admin of the `Default` tenant. This is useful to see at a glance which version of the app you have to deployed currently to the given environment. You can also display a link to the CI build's page.
 
 Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
 
 ## Documentation
 
-Add detailed documentation here. If it's a lot of content then create documentation pages under the *Docs* folder and link pages here.
+Just enable the "Lombiq Hosting - Build Version Display" feature on the `Default` tenant to display the Orchard Core version and the app's .NET version on the dashboard.
+
+Optionally, a link to the CI build's page can be display as well. During `dotnet build`, provide this in the `BuildUrl` property. E.g.:
+
+```pwsh
+dotnet build .\MyApp.sln -p:BuildUrl=https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/123
+```
+
+The [Deploy to Azure App Service workflow](https://github.com/Lombiq/GitHub-Actions/blob/dev/Docs/Workflows.md#deploy-to-azure-app-service-workflow) also takes care of this.
 
 ## Contributing and support
 

@@ -1,15 +1,32 @@
-@{
-    var orchardVersion = typeof(OrchardCore.IOrchardHelper).Assembly.GetName().Version.ToString();
-    var buildVersion = "#build.version#";
+@using System.Reflection;
+@using Lombiq.Hosting.BuildVersionDisplay;
 
-    // The placeholder wasn't replaced, using the default.
-    if (buildVersion == "#build.version#")
+@{
+    var webAppAssembly = Assembly.GetEntryAssembly();
+
+    // These can't be null as long as the code actually compiles.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+    var orchardVersion = typeof(OrchardCore.IOrchardHelper).Assembly.GetName().Version.ToString();
+    var buildVersion = webAppAssembly.GetName().Version.ToString();
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+
+    // When using the module from NuGet, the web app will contain the 
+    var webAppAttribute = webAppAssembly.GetCustomAttribute<BuildUrlAttribute>();
+    var buildUrl = webAppAttribute?.Url;
+    if (string.IsNullOrEmpty(buildUrl))
     {
-        buildVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
+        var moduleAttribute = Assembly.GetExecutingAssembly().GetCustomAttribute<BuildUrlAttribute>();
+        buildUrl = moduleAttribute?.Url;
     }
 }
 
 <div id="lombiq-hosting-build-version-display-build-version">
-    @* Html.Raw() is necessary so links can be included in the replaced build version. *@
-    @T["Orchard Core version: {0}<br>App build version: {1}", orchardVersion, Html.Raw(buildVersion)]
+    @T["Orchard Core version: {0}", orchardVersion]
+    <br>
+    @T["App build version: {0}", buildVersion]
+    @if (!string.IsNullOrEmpty(buildUrl))
+    {
+        <br>
+        @T["<a href=\"{0}\" target=\"_blank\">Build link</a>", buildUrl]
+    }
 </div>

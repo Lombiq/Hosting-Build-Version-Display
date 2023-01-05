@@ -1,0 +1,14 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Setting a test value just when working in the OSOCE solution. -->
+  <PropertyGroup Condition="'$(BuildUrl)' == '' AND '$(SolutionName)' == 'Lombiq.OSOCE'" >
+    <BuildUrl>https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/123</BuildUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="Lombiq.Hosting.BuildVersionDisplay.BuildUrlAttribute">
+      <_Parameter1>$(BuildUrl)</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+</Project>

@@ -23,6 +23,7 @@
   <ItemGroup>
     <None Include="License.md" Pack="true" PackagePath="" />
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
+    <None Include="*.props" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +56,6 @@
 
   <!-- The props file will be automatically imported when using the project from NuGet but needs an explicit import
   when used from source. -->
-  <Import Project="build/Lombiq.Hosting.BuildVersionDisplay.props" />
+  <Import Project="build/Lombiq.Hosting.BuildVersionDisplay.props" Condition="'$(NuGetBuild)' != 'true'" />
 
 </Project>

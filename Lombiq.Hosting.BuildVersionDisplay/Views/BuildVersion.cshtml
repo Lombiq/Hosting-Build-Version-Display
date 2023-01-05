@@ -10,7 +10,7 @@
     var buildVersion = webAppAssembly.GetName().Version.ToString();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
-    // When using the module from NuGet, the web app will contain the 
+    // When using the module from NuGet, the web app will contain the
     var webAppAttribute = webAppAssembly.GetCustomAttribute<BuildUrlAttribute>();
     var buildUrl = webAppAttribute?.Url;
     if (string.IsNullOrEmpty(buildUrl))
@@ -21,12 +21,19 @@
 }
 
 <div id="lombiq-hosting-build-version-display-build-version">
-    @T["Orchard Core version: {0}", orchardVersion]
-    <br>
-    @T["App build version: {0}", buildVersion]
-    @if (!string.IsNullOrEmpty(buildUrl))
-    {
-        <br>
-        @T["<a href=\"{0}\" target=\"_blank\">Build link</a>", buildUrl]
-    }
+    @T["Build versions:"]
+    <ul>
+        <li>
+            @T["Orchard Core version: {0}", orchardVersion]
+        </li>
+        <li>
+            @T["App build version: {0}", buildVersion]
+        </li>
+        @if (!string.IsNullOrEmpty(buildUrl))
+        {
+            <li>
+                @T["<a href=\"{0}\" target=\"_blank\">Build link</a>", buildUrl]
+            </li>
+        }
+    </ul>
 </div>

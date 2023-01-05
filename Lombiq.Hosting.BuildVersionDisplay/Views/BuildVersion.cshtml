@@ -10,7 +10,8 @@
     var buildVersion = webAppAssembly.GetName().Version.ToString();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
-    // When using the module from NuGet, the web app will contain the
+    // When using the module from from NuGet the web app's binaries will contain the attribute, when using it from
+    // source, the module's.
     var webAppAttribute = webAppAssembly.GetCustomAttribute<BuildUrlAttribute>();
     var buildUrl = webAppAttribute?.Url;
     if (string.IsNullOrEmpty(buildUrl))

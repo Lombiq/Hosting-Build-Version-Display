@@ -1,7 +1,7 @@
 namespace Lombiq.Hosting.BuildVersionDisplay;
 
 [AttributeUsage(AttributeTargets.Assembly)]
-internal sealed class BuildUrlAttribute : Attribute
+public sealed class BuildUrlAttribute : Attribute
 {
     public string? Url { get; }
 

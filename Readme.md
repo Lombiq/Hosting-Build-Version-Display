@@ -4,7 +4,7 @@
 
 ## About
 
-[Orchard Core](https://www.orchardcore.net/) module to display the build version (i.e. .NET assembly version or other) on the admin of the `Default` tenant. This is useful to see at a glance which version of the app you have to deployed currently to the given environment. You can also display a link to the CI build's page.
+[Orchard Core](https://www.orchardcore.net/) module to display the build version (i.e. .NET assembly version or other) on the admin of the `Default` tenant. This is useful to see at a glance which version of the app you have deployed currently to the given environment. You can also display a link to the CI build's page.
 
 ![Screenshot of Build Version Display on the Orchard Core dashboard](Lombiq.Hosting.BuildVersionDisplay/Docs/Attachments/Screenshot.png)
 

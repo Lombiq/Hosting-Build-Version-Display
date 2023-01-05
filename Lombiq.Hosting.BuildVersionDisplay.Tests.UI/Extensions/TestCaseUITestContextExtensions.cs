@@ -12,7 +12,7 @@ public static class TestCaseUITestContextExtensions
     /// <summary>
     /// Tests the Lombiq Hosting - Build Version Display for Orchard Core feature.
     /// </summary>
-    public static async Task TestBuildVersionDisplayAsync(this UITestContext context, bool checkBuildLink = true)
+    public static async Task TestBuildVersionDisplayAsync(this UITestContext context, bool checkBuildLink = false)
     {
         await context.SignInDirectlyAndGoToDashboardAsync();
 

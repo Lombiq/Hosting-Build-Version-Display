@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.git*;node_modules\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Title>Lombiq Hosting - Build Version Display for Orchard Core</Title>
+    <Authors>Lombiq Technologies</Authors>
+    <Copyright>Copyright © 2023, Lombiq Technologies Ltd.</Copyright>
+    <Description>Lombiq Hosting - Build Version Display for Orchard Core: Orchard Core module to display the build version (i.e. .NET assembly version or other) on the admin of the Default tenant. See the project website for detailed documentation.</Description>
+    <PackageIcon>NuGetIcon.png</PackageIcon>
+    <PackageTags>OrchardCore;Lombiq;AspNetCore;Hosting;</PackageTags>
+    <RepositoryUrl>https://github.com/Lombiq/Hosting-Build-Version-Display</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Lombiq/Hosting-Build-Version-Display</PackageProjectUrl>
+    <PackageLicenseFile>License.md</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="License.md" Pack="true" PackagePath="" />
+    <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
+    <!-- If this is not explicitly specified then OrchardCore.Module.Targets will take over the build folder and it
+    won't be included. -->
+    <None Include="build\Lombiq.Hosting.BuildVersionDisplay.targets" Pack="true" PackagePath="build\Lombiq.Hosting.BuildVersionDisplay.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.Module.Targets" Version="1.5.0" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Readme.md" Link="Readme.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="node_modules\**" />
+    <None Remove="Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+    <ProjectReference Include="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="5.0.0" />
+  </ItemGroup>
+
+  <!-- The targets file will be automatically imported when using the project from NuGet but needs an explicit import
+  when used from source. -->
+  <Import Project="build/Lombiq.Hosting.BuildVersionDisplay.targets" Condition="'$(NuGetBuild)' != 'true'" />
+
+</Project>

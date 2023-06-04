@@ -6,7 +6,7 @@ using OrchardCore.DisplayManagement.Layout;
 
 namespace Lombiq.Hosting.BuildVersionDisplay.Filters;
 
-internal class BuildVersionDisplayInjectingFilter : IAsyncResultFilter
+internal sealed class BuildVersionDisplayInjectingFilter : IAsyncResultFilter
 {
     private readonly ILayoutAccessor _layoutAccessor;
     private readonly IShapeFactory _shapeFactory;

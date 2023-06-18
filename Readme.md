@@ -1,6 +1,6 @@
 # Lombiq Hosting - Build Version Display for Orchard Core
 
-[![Lombiq.Hosting.BuildVersionDisplay NuGet](https://img.shields.io/nuget/v/Lombiq.Hosting.BuildVersionDisplay?label=Lombiq.Hosting.BuildVersionDisplay)](https://www.nuget.org/packages/Lombiq.Hosting.BuildVersionDisplay/)
+[![Lombiq.Hosting.BuildVersionDisplay NuGet](https://img.shields.io/nuget/v/Lombiq.Hosting.BuildVersionDisplay?label=Lombiq.Hosting.BuildVersionDisplay)](https://www.nuget.org/packages/Lombiq.Hosting.BuildVersionDisplay/) [![Lombiq.Hosting.BuildVersionDisplay.Tests.UI NuGet](https://img.shields.io/nuget/v/Lombiq.Hosting.BuildVersionDisplay.Tests.UI?label=Lombiq.Hosting.BuildVersionDisplay.Tests.UI)](https://www.nuget.org/packages/Lombiq.Hosting.BuildVersionDisplay.Tests.UI/)
 
 ## About
 

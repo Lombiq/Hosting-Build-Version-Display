@@ -22,7 +22,7 @@ Optionally, a link to the CI build's page can be display as well. During `dotnet
 dotnet build .\MyApp.sln -p:BuildVersionDisplay_BuildUrl=https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/actions/runs/123
 ```
 
-The [Deploy to Azure App Service workflow](https://github.com/Lombiq/GitHub-Actions/blob/dev/Docs/Workflows.md#deploy-to-azure-app-service-workflow) also takes care of this.
+The [Deploy to Azure App Service workflow](https://github.com/Lombiq/GitHub-Actions/blob/dev/Docs/Workflows/AzureHosting/DeployToAzureAppService.md) also takes care of this.
 
 ## Contributing and support
 

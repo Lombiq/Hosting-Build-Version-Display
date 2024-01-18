@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using OrchardCore.Admin;
 using OrchardCore.DisplayManagement;
 using OrchardCore.DisplayManagement.Layout;
+using OrchardCore.Modules;
 
 namespace Lombiq.Hosting.BuildVersionDisplay.Filters;
 

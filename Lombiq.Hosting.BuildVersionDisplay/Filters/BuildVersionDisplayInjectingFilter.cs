@@ -7,25 +7,36 @@ using OrchardCore.Modules;
 
 namespace Lombiq.Hosting.BuildVersionDisplay.Filters;
 
-internal sealed class BuildVersionDisplayInjectingFilter(
-    ILayoutAccessor layoutAccessor,
-    IShapeFactory shapeFactory,
-    IOptions<AdminOptions> adminOptions) : IAsyncResultFilter
+internal sealed class BuildVersionDisplayInjectingFilter : IAsyncResultFilter
 {
+    private readonly ILayoutAccessor _layoutAccessor;
+    private readonly IShapeFactory _shapeFactory;
+    private readonly IOptions<AdminOptions> _adminOptions;
+
+    public BuildVersionDisplayInjectingFilter(
+        ILayoutAccessor layoutAccessor,
+        IShapeFactory shapeFactory,
+        IOptions<AdminOptions> adminOptions)
+    {
+        _layoutAccessor = layoutAccessor;
+        _shapeFactory = shapeFactory;
+        _adminOptions = adminOptions;
+    }
+
     public async Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
     {
         if (context.IsNotFullViewRendering() ||
             !context.IsAdmin() ||
-            !context.HttpContext.Request.Path.ToString().TrimEnd('/').EqualsOrdinalIgnoreCase("/" + adminOptions.Value.AdminUrlPrefix))
+            !context.HttpContext.Request.Path.ToString().TrimEnd('/').EqualsOrdinalIgnoreCase("/" + _adminOptions.Value.AdminUrlPrefix))
         {
             await next();
 
             return;
         }
 
-        var layout = await layoutAccessor.GetLayoutAsync();
+        var layout = await _layoutAccessor.GetLayoutAsync();
         var zone = layout.Zones["Content"];
-        await zone.AddAsync(await shapeFactory.CreateAsync("BuildVersion"), ":after");
+        await zone.AddAsync(await _shapeFactory.CreateAsync("BuildVersion"), ":after");
 
         await next();
     }

@@ -51,7 +51,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="9.0.0" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="9.1.0" />
   </ItemGroup>
 
   <!-- The targets file will be automatically imported when using the project from NuGet but needs an explicit import

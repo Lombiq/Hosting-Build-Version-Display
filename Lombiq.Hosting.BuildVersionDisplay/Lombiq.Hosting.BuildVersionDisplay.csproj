@@ -17,11 +17,10 @@
     <PackageTags>OrchardCore;Lombiq;AspNetCore;Hosting;</PackageTags>
     <RepositoryUrl>https://github.com/Lombiq/Hosting-Build-Version-Display</RepositoryUrl>
     <PackageProjectUrl>https://github.com/Lombiq/Hosting-Build-Version-Display</PackageProjectUrl>
-    <PackageLicenseFile>License.md</PackageLicenseFile>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="License.md" Pack="true" PackagePath="" />
     <None Include="NuGetIcon.png" Pack="true" PackagePath="" />
     <!-- If this is not explicitly specified then OrchardCore.Module.Targets will take over the build folder and it
     won't be included. -->

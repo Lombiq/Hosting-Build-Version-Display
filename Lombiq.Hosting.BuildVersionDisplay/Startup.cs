@@ -5,7 +5,7 @@ using OrchardCore.Modules;
 
 namespace Lombiq.Hosting.BuildVersionDisplay;
 
-public class Startup : StartupBase
+public sealed class Startup : StartupBase
 {
     public override void ConfigureServices(IServiceCollection services) =>
         services.Configure<MvcOptions>((options) => options.Filters.Add(typeof(BuildVersionDisplayInjectingFilter)));

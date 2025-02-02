@@ -16,7 +16,10 @@
     var buildUrl = webAppAttribute?.Url;
     if (string.IsNullOrEmpty(buildUrl))
     {
+        // The suggested alternative is not the same, we actually need this.
+#pragma warning disable S3902 // "Assembly.GetExecutingAssembly" should not be called
         var moduleAttribute = Assembly.GetExecutingAssembly().GetCustomAttribute<BuildUrlAttribute>();
+#pragma warning restore S3902 // "Assembly.GetExecutingAssembly" should not be called
         buildUrl = moduleAttribute?.Url;
     }
 }

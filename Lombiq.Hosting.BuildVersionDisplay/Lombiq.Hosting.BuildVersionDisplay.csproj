@@ -5,7 +5,7 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <DefaultItemExcludes>$(DefaultItemExcludes);.git*;node_modules\**</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.git*</DefaultItemExcludes>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -40,17 +40,12 @@
     <None Include="..\Readme.md" Link="Readme.md" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="node_modules\**" />
-    <None Remove="Tests\**" />
-  </ItemGroup>
-
   <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
     <ProjectReference Include="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.3.0" />
+    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.4.1-alpha.2.osoe-1185" />
   </ItemGroup>
 
   <!-- The targets file will be automatically imported when using the project from NuGet but needs an explicit import

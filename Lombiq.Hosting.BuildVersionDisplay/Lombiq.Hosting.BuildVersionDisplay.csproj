@@ -1,5 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
+  <PropertyGroup>
+    <ImportLombiqHelpfulLibrariesOrchardCore>true</ImportLombiqHelpfulLibrariesOrchardCore>
+  </PropertyGroup>
+
   <Import Project="../../../Utilities/Lombiq.MSBuild.Targets/Lombiq.MSBuild.Module.Targets/Lombiq.MSBuild.Module.Targets.props"
           Condition="'$(NuGetBuild)' != 'true' "/>
 
@@ -21,14 +25,6 @@
     <!-- If this is not explicitly specified then OrchardCore.Module.Targets will take over the build folder and it
     won't be included. -->
     <None Include="build\Lombiq.Hosting.BuildVersionDisplay.targets" Pack="true" PackagePath="build\Lombiq.Hosting.BuildVersionDisplay.targets" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
-    <ProjectReference Include="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
-    <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.5.0" />
   </ItemGroup>
 
   <!-- The targets file will be automatically imported when using the project from NuGet but needs an explicit import

@@ -12,7 +12,7 @@
   <PropertyGroup>
     <Title>Lombiq Hosting - Build Version Display for Orchard Core</Title>
     <CopyrightYear>2023</CopyrightYear>
-    <DescriptionBody>Orchard Core module to display the build version (i.e. .NET assembly version or other) on the admin of the Default tenant. See the project website for detailed documentation.</DescriptionBody>
+    <DescriptionBody>Orchard Core module to display the build version (i.e. .NET assembly version or other) on the admin of the Default tenant.</DescriptionBody>
     <PackageTags>OrchardCore;Lombiq;AspNetCore;Hosting;</PackageTags>
     <RepositoryUrl>https://github.com/Lombiq/Hosting-Build-Version-Display</RepositoryUrl>
   </PropertyGroup>

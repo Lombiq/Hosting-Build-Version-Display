@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Lombiq.Hosting.BuildVersionDisplay.Tests.UI/Lombiq.Hosting.BuildVersionDisplay.Tests.UI.csproj" />
+  <Project Path="Lombiq.Hosting.BuildVersionDisplay/Lombiq.Hosting.BuildVersionDisplay.csproj" />
+</Solution>
